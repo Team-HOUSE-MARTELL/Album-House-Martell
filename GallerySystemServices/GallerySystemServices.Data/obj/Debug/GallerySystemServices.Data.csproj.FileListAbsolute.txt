@@ -1,0 +1,16 @@
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySystemServices.Data.dll.config
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySystemServices.Data.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySystemServices.Data.pdb
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\EntityFramework.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySysteServices.Models.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySysteServices.Models.pdb
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\EntityFramework.xml
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.csprojResolveAssemblyReference.cache
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.pdb

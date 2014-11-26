@@ -1,0 +1,4 @@
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySysteServices.Models\bin\Debug\GallerySysteServices.Models.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySysteServices.Models\bin\Debug\GallerySysteServices.Models.pdb
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySysteServices.Models\obj\Debug\GallerySysteServices.Models.dll
+C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySysteServices.Models\obj\Debug\GallerySysteServices.Models.pdb
