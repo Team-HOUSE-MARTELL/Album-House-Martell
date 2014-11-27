@@ -28,6 +28,9 @@
                 case '#about':
                     $('#page-content').load('views/about.html');
                     break;
+                case '#albums':
+                    $('#page-content').load('views/gallery.html');
+                    break;
 
                 default :
                     $('#page-content').load('views/home.html');
