@@ -56,5 +56,23 @@ namespace GallerySystemServices.Services.Managers
                 return user;
             }
         }
+
+        public User SetUserSessionKeyByUserId(int userId, string sessionKey)
+        {
+            var dbContext = new GallerySystemServicesContext();
+
+            using (dbContext)
+            {
+                var user = dbContext.Users.FirstOrDefault(u => u.Id == userId);
+
+                if (user != null)
+                {
+                    user.SessionKey = sessionKey;
+                    dbContext.SaveChanges();
+                }
+
+                return user;
+            }
+        }
     }
 }

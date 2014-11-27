@@ -11,8 +11,8 @@ namespace GallerySystemServices.Services.Services
     {
         private const string SESSION_KEY_CHARS = "qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM1234567890";
         private const int SESSION_KEY_LENGTH = 50;
-        private const string USER_EXIST = "There is user with the same email!";
-        private const string WRONG_EMAIL = "There is no user with such email!";
+        private const string USER_EXIST = "There is user with the same username!";
+        private const string WRONG_USERNAME = "There is no user with such username!";
         private const string WRONG_PASSWORD = "Wrong password";
 
         private UserManager userManager;
@@ -31,6 +31,10 @@ namespace GallerySystemServices.Services.Services
                 throw new InvalidOperationException(USER_EXIST);
             }
 
+            Validator.ValidateEmail(userModel.Email);
+            Validator.ValidateName(userModel.UserName);
+            Validator.ValidatePassword(userModel.AuthCode);
+
             user = new User()
             {
                 UserName = userModel.UserName,
@@ -45,6 +49,37 @@ namespace GallerySystemServices.Services.Services
             newUser = this.userManager.SetUserSessionKey(newUser, sesionKey);
 
             return newUser;
+        }
+
+        public User AuthenticateUser(string userName, string password)
+        {
+            var user = this.userManager.GetUserByUserName(userName);
+
+            if (user == null)
+            {
+                throw new InvalidOperationException(WRONG_USERNAME);
+            }
+
+            string passwordHash = PasswordHasher.ConvertStringToSHA1(password);
+            if (user.AuthCode != passwordHash)
+            {
+                throw new ArgumentException(WRONG_PASSWORD);
+            }
+
+            string sessionKey = this.GenerateSessionKey(user.Id);
+
+            user = this.userManager.SetUserSessionKey(user, sessionKey);
+
+            return user;
+        }
+
+        public void LogoutUser(string sessionKey)
+        {
+            var user = GetUserBySessionKey(sessionKey);
+
+            if (user != null) {
+                this.userManager.SetUserSessionKeyByUserId(user.Id, "");
+            }
         }
 
         public User GetUserBySessionKey(string sessionKey)

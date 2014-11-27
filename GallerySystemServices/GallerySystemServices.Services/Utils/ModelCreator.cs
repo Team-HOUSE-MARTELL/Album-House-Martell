@@ -16,7 +16,8 @@ namespace GallerySystemServices.Services.Utils
                 Id = user.Id,
                 UserName = user.UserName,
                 SessionKey = user.SessionKey,
-                CreatedAt = user.CreatedAt
+                CreatedAt = user.CreatedAt,
+                Email = user.Email
             };
 
             return userModel;

@@ -37,8 +37,30 @@ namespace GallerySystemServices.Services.Controllers
             }
         }
 
+        [HttpGet]
+        [ActionName("getUser")]
+        public HttpResponseMessage GetUserBySessionKey(string sessionKey)
+        {
+            try
+            {
+                var userService = new UserService();
+                var user = userService.GetUserBySessionKey(sessionKey);
+                if (user == null)
+                {
+                    throw new Exception(NOT_LOGGED);
+                }
 
+                var userToReturn = ModelCreator.CreateUserModel(user);
 
+                var response = this.Request.CreateResponse(HttpStatusCode.OK, userToReturn);
 
+                return response;
+            }
+            catch (Exception ex)
+            {
+                var response = this.Request.CreateResponse(HttpStatusCode.BadRequest,ex.Message);
+                return response;
+            }
+        }
     }
 }

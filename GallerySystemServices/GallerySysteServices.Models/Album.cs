@@ -11,6 +11,10 @@ using System.ComponentModel.DataAnnotations;
 
         public string Title { get; set; }
 
+        public int Votes { get; set; }
+
+        public string Comments { get; set; }
+
         public DateTime CreatedAt { get; set; }
 
         public virtual ICollection<Picture> Picture { get; set; }
@@ -19,7 +23,7 @@ using System.ComponentModel.DataAnnotations;
 
         public Album ()
         {
-
+            this.Picture = new HashSet<Picture>();
         }
     }
 }

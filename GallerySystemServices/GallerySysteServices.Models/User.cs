@@ -12,6 +12,9 @@ using System.ComponentModel.DataAnnotations;
         [Required]
         public string UserName { get; set; }
 
+        [Required]
+        public string Email { get; set; }
+
         public virtual ICollection<Album> Albums { get; set; }
 
         [Required]
