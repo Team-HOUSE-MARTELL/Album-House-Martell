@@ -185,17 +185,25 @@
     <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Managers\AlbumManager.cs" />
+    <Compile Include="Managers\CategoryManager.cs" />
+    <Compile Include="Managers\PictureManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Models\AlbumModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CommentModel.cs" />
     <Compile Include="Models\PictureModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\VoteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AlbumService.cs" />
+    <Compile Include="Services\CategoriesService.cs" />
+    <Compile Include="Services\PictureService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Utils\ModelCreator.cs" />
     <Compile Include="Utils\PasswordHasher.cs" />

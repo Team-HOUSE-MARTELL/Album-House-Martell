@@ -1,4 +1,5 @@
 ﻿using GallerySystemServices.Data;
+using GallerySystemServices.Services.Models;
 using GallerySysteServices.Models;
 using System;
 using System.Collections.Generic;
@@ -10,69 +11,61 @@ namespace GallerySystemServices.Services.Managers
 {
     public class UserManager
     {
-        public User RegisterUser (User user)
+
+        public GallerySystemServicesContext dbContext;
+
+        public UserManager()
         {
-            var dbContext = new GallerySystemServicesContext();
+            this.dbContext = WebApiApplication.dbContext;
+        }
 
-            using(dbContext)
-            {
-                dbContext.Users.Add(user);
-                dbContext.SaveChanges();
+        public User RegisterUser(User user)
+        {
+            dbContext.Users.Add(user);
+            dbContext.SaveChanges();
 
-                return user;
-            }
+            return user;
         }
 
         public User GetUserByUserName(string userName)
         {
-            var dbContext = new GallerySystemServicesContext();
-
-            using(dbContext)
-            {
-                return dbContext.Users.FirstOrDefault(u => u.UserName == userName);
-            }
+            return dbContext.Users.FirstOrDefault(u => u.UserName == userName);
         }
 
         public User GetUserBySessionKey(string sessionKey)
         {
-            var dbContext = new GallerySystemServicesContext();
-
-            using (dbContext)
-            {
-                return dbContext.Users.FirstOrDefault(u => u.SessionKey == sessionKey);
-            }
+            return dbContext.Users.FirstOrDefault(u => u.SessionKey == sessionKey);
         }
 
         public User SetUserSessionKey(User user, string sessionKey)
         {
-            var dbContext = new GallerySystemServicesContext();
+            user.SessionKey = sessionKey;
+            dbContext.SaveChanges();
 
-            using(dbContext)
-            {
-                dbContext.Users.Attach(user);
-                user.SessionKey = sessionKey;
-                dbContext.SaveChanges();
-
-                return user;
-            }
+            return user;
         }
 
         public User SetUserSessionKeyByUserId(int userId, string sessionKey)
         {
-            var dbContext = new GallerySystemServicesContext();
+            var user = dbContext.Users.FirstOrDefault(u => u.Id == userId);
 
-            using (dbContext)
+            if (user != null)
             {
-                var user = dbContext.Users.FirstOrDefault(u => u.Id == userId);
-
-                if (user != null)
-                {
-                    user.SessionKey = sessionKey;
-                    dbContext.SaveChanges();
-                }
-
-                return user;
+                user.SessionKey = sessionKey;
+                dbContext.SaveChanges();
             }
+
+            return user;
+        }
+
+        public Category AddCategoryToUser(Category category, User user)
+        {
+            category.User = user;
+
+            user.Categories.Add(category);
+
+            dbContext.SaveChanges();
+            return category;
         }
     }
 }

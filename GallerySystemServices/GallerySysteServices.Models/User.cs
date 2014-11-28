@@ -1,8 +1,8 @@
 ﻿namespace GallerySysteServices.Models
 {
     using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class User
     {
@@ -12,7 +12,8 @@ using System.ComponentModel.DataAnnotations;
         [Required]
         public string UserName { get; set; }
 
-        [Required]
+        public virtual ICollection<Category> Categories { get; set; }
+
         public string Email { get; set; }
 
         public virtual ICollection<Album> Albums { get; set; }
@@ -26,6 +27,7 @@ using System.ComponentModel.DataAnnotations;
         public User()
         {
             this.Albums = new HashSet<Album>();
+            this.Categories = new HashSet<Category>();
         }
     }
 }

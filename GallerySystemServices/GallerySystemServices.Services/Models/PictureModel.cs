@@ -10,6 +10,10 @@ namespace GallerySystemServices.Services.Models
     {
         public int Id { get; set; }
 
+        public int PositiveVotes { get; set; }
+
+        public int NegativeVotes { get; set; }
+
         public string Title { get; set; }
 
         public DateTime CreateDate { get; set; }
@@ -18,8 +22,6 @@ namespace GallerySystemServices.Services.Models
 
         public string Url { get; set; }
 
-        public int Votes { get; set; }
-
-        public string Comments { get; set; }
+        public IEnumerable<CommentModel> Comments { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace GallerySystemServices.Services.Models
 {
     public class UserModel
@@ -10,6 +11,8 @@ namespace GallerySystemServices.Services.Models
         public string UserName { get; set; }
 
         public string SessionKey { get; set; }
+
+        public IEnumerable<CategoryModel> Categories { get; set; }
 
         public string Email { get; set; }
 

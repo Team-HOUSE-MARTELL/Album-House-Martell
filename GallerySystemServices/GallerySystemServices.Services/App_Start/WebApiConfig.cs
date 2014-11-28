@@ -10,10 +10,37 @@ namespace GallerySystemServices.Services
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+               name: "picture",
+               routeTemplate: "api/picture/{action}",
+               defaults: new { controller = "Picture" }
+           );
+
+            config.Routes.MapHttpRoute(
+               name: "album",
+               routeTemplate: "api/album/{action}",
+               defaults: new { controller = "Album" }
+           );
+
+            config.Routes.MapHttpRoute(
+               name: "authentication",
+               routeTemplate: "api/authentication/{action}/{userId}",
+               defaults: new { controller = "Authentication", userId = RouteParameter.Optional }
+           );
+
+            config.Routes.MapHttpRoute(
+               name: "user",
+               routeTemplate: "api/user/{action}",
+               defaults: new { controller = "User" }
+           );
+
+            config.Routes.MapHttpRoute(
+               name: "DefaultApi",
+               routeTemplate: "api/{controller}/{id}",
+               defaults: new { id = RouteParameter.Optional },
+               constraints: new { controller = "Home" }
+           );
+
+
 
             // Uncomment the following line of code to enable query support for actions with an IQueryable or IQueryable<T> return type.
             // To avoid processing unexpected or malicious queries, use the validation settings on QueryableAttribute to validate incoming queries.

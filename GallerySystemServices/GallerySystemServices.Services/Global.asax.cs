@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GallerySystemServices.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,9 +15,12 @@ namespace GallerySystemServices.Services
 
     public class WebApiApplication : System.Web.HttpApplication
     {
+        public static GallerySystemServicesContext dbContext;
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            dbContext = new GallerySystemServicesContext();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

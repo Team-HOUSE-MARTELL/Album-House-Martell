@@ -1,8 +1,8 @@
 ﻿namespace GallerySysteServices.Models
 {
     using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class Album
     {
@@ -11,19 +11,22 @@ using System.ComponentModel.DataAnnotations;
 
         public string Title { get; set; }
 
-        public int Votes { get; set; }
-
-        public string Comments { get; set; }
-
         public DateTime CreatedAt { get; set; }
 
-        public virtual ICollection<Picture> Picture { get; set; }
+        public virtual ICollection<Picture> Pictures { get; set; }
+
+        public virtual ICollection<AlbumComment> Comments { get; set; }
+        public virtual ICollection<AlbumVote> Votes { get; set; }
+
+        public virtual Category Category { get; set; }
 
         public virtual User User { get; set; }
 
         public Album ()
         {
-            this.Picture = new HashSet<Picture>();
+            this.Pictures = new HashSet<Picture>();
+            this.Votes = new HashSet<AlbumVote>();
+            this.Comments = new HashSet<AlbumComment>();
         }
     }
 }

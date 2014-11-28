@@ -12,14 +12,21 @@ namespace GallerySystemServices.Services.Models
 
         public string Title { get; set; }
 
+        public int PositiveVotes { get; set; }
+
+        public int NegativeVotes { get; set; }
+
+        public CategoryModel Category { get; set; }
+
+        public IEnumerable<CommentModel> Comments { get; set; }
+
         public DateTime CreatedAt { get; set; }
 
-        public ICollection<PictureModel> Picture { get; set; }
+        public IEnumerable<PictureModel> Pictures { get; set; }
 
-        public int Votes { get; set; }
+        public string MainImageUrl { get; set; }
 
-        public string Comments { get; set; }
-
+        public int CategoryId { get; set; }
         public UserModel User { get; set; }
     }
 }

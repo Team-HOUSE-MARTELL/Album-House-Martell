@@ -62,5 +62,66 @@ namespace GallerySystemServices.Services.Controllers
                 return response;
             }
         }
+
+        [HttpGet]
+        [ActionName("getUserCategories")]
+        public HttpResponseMessage GetUserCategories(string sessionKey)
+        {
+            try
+            {
+                var userService = new UserService();
+                var user = userService.GetUserBySessionKey(sessionKey);
+                if (user == null)
+                {
+                    throw new Exception(NOT_LOGGED);
+                }
+
+                var categoriesToReturn = from category in user.Categories
+                                         select new CategoryModel()
+                                         {
+                                             Id = category.Id,
+                                             Name = category.Name
+                                         };
+
+                var response = this.Request.CreateResponse(HttpStatusCode.OK, categoriesToReturn);
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                var response = this.Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+                return response;
+            }
+        }
+
+        [HttpPost]
+        [ActionName("addCategoryToUser")]
+        public HttpResponseMessage PostAddCategoryToUser(CategoryModel category, string sessionKey)
+        {
+            try
+            {
+                var userService = new UserService();
+                var user = userService.GetUserBySessionKey(sessionKey);
+
+                if (user == null)
+                {
+                    throw new Exception("Cannot edit album");
+                }
+
+                var newCategory = userService.AddCategoryToUser(category, user);
+
+                var categoryToReturn = new CategoryModel()
+                {
+                    Id = newCategory.Id,
+                    Name = newCategory.Name
+                };
+
+                return this.Request.CreateResponse(HttpStatusCode.OK, categoryToReturn);
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
     }
 }

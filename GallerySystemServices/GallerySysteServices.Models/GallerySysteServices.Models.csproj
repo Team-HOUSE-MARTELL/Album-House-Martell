@@ -41,7 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Album.cs" />
+    <Compile Include="AlbumComment.cs" />
+    <Compile Include="AlbumVote.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="Picture.cs" />
+    <Compile Include="PictureComment.cs" />
+    <Compile Include="PictureVote.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

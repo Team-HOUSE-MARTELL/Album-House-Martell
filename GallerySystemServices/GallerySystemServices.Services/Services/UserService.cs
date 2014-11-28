@@ -31,13 +31,14 @@ namespace GallerySystemServices.Services.Services
                 throw new InvalidOperationException(USER_EXIST);
             }
 
-            Validator.ValidateEmail(userModel.Email);
-            Validator.ValidateName(userModel.UserName);
-            Validator.ValidatePassword(userModel.AuthCode);
+            //Validator.ValidateEmail(userModel.Email);
+            //Validator.ValidateName(userModel.UserName);
+            //Validator.ValidatePassword(userModel.AuthCode);
 
             user = new User()
             {
                 UserName = userModel.UserName,
+                Email = userModel.Email,
                 AuthCode = PasswordHasher.ConvertStringToSHA1(userModel.AuthCode),
                 CreatedAt = DateTime.Now
             };
@@ -98,6 +99,16 @@ namespace GallerySystemServices.Services.Services
                 skeyBuilder.Append(SESSION_KEY_CHARS[index]);
             }
             return skeyBuilder.ToString();
+        }
+
+        public Category AddCategoryToUser(CategoryModel category, User user)
+        {
+            var newCategory = new Category()
+            {
+                Name = category.Name
+            };
+
+            return this.userManager.AddCategoryToUser(newCategory, user);
         }
     }
 }

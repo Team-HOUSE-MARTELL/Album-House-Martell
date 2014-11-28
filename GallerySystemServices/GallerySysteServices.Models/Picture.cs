@@ -1,6 +1,7 @@
 ﻿namespace GallerySysteServices.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class Picture
@@ -11,21 +12,22 @@
         [Required]
         public string Url { get; set; }
 
-        public int Votes { get; set; }
-
-        public string Comments { get; set; }
-
         public string Description { get; set; }
 
         public string Title { get; set; }
 
         public DateTime CreateDate { get; set; }
 
+        public virtual ICollection<PictureComment> Comments { get; set; }
+        public virtual ICollection<PictureVote> Votes { get; set; }
+
         [Required]
         public virtual Album Album { get; set; }
 
         public Picture ()
         {
+            this.Comments = new HashSet<PictureComment>();
+            this.Votes = new HashSet<PictureVote>();
 
         }
     }

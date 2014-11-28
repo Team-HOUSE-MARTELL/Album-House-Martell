@@ -14,3 +14,19 @@ C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\G
 C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.csprojResolveAssemblyReference.cache
 C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.dll
 C:\Users\kristiyan\documents\visual studio 2013\Projects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.pdb
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySystemServices.Data.dll.config
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySystemServices.Data.dll
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySystemServices.Data.pdb
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\EntityFramework.dll
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySysteServices.Models.dll
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.dll
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\GallerySysteServices.Models.pdb
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\EntityFramework.xml
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.csprojResolveAssemblyReference.cache
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.dll
+E:\VisualStudioProjects\GallerySystemServices\GallerySystemServices.Data\obj\Debug\GallerySystemServices.Data.pdb

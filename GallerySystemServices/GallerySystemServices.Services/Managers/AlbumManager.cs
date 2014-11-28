@@ -10,43 +10,85 @@ namespace GallerySystemServices.Services.Managers
 {
     public class AlbumManager
     {
+        public GallerySystemServicesContext dbContext;
 
-        public Album CreateAlbum(Album album, User user)
+        public AlbumManager()
         {
-            var dbContext = new GallerySystemServicesContext();
+            this.dbContext = WebApiApplication.dbContext;
+        }
 
-            using (dbContext)
-            {
-                dbContext.Albums.Add(album);
-                dbContext.Users.Attach(user);
-                user.Albums.Add(album);
-                dbContext.SaveChanges();
+        public Album CreateAlbum(Album album, User user, Category category)
+        {
+            dbContext.Albums.Add(album);
 
-                return album;
-            }
+            album.User = user;
+
+            album.Category = category;
+
+            dbContext.SaveChanges();
+
+            return album;
+
         }
 
         public Album GetAlbumById(int id)
         {
-            var dbContext = new GallerySystemServicesContext();
-
-            using (dbContext)
-            {
-                return dbContext.Albums.Include(a=>a.User).FirstOrDefault(a => a.Id == id);
-            }
+            return dbContext.Albums.Include(a => a.User).FirstOrDefault(a => a.Id == id);
         }
 
         public Album EditAlbum(Album album)
         {
-            var dbContext = new GallerySystemServicesContext();
-
-            using (dbContext)
-            {
-                dbContext.Albums.Attach(album);
-                dbContext.SaveChanges();
-            }
-
+            dbContext.SaveChanges();
             return album;
+        }
+
+        public void DeleteAlbum(Album album)
+        {
+            foreach (var picture in album.Pictures)
+            {
+                dbContext.Pictures.Remove(picture);
+            }
+            dbContext.Albums.Remove(album);
+            dbContext.SaveChanges();
+
+        }
+
+        public AlbumComment AddComment(AlbumComment comment, Album album, User user)
+        {
+            comment.User = user;
+
+            album.Comments.Add(comment);
+
+            dbContext.SaveChanges();
+            return comment;
+
+        }
+
+        public AlbumVote AddVote(AlbumVote vote, Album album, User user)
+        {
+            vote.User = user;
+
+            album.Votes.Add(vote);
+
+            dbContext.SaveChanges();
+            return vote;
+
+        }
+
+        public Picture AddPicture(Picture picture, Album album)
+        {
+            picture.Album = album;
+            album.Pictures.Add(picture);
+
+            dbContext.SaveChanges();
+            return picture;
+        }
+
+        public void DeletePictureFromAlbum(Picture picture)
+        {
+            picture.Album.Pictures.Remove(picture);
+            dbContext.Pictures.Remove(picture);
+            dbContext.SaveChanges();
         }
     }
 }
