@@ -1,0 +1,7 @@
+GET http://gallerysystemservices.apphb.com//api/picture/GetPictureById?pictureId=1&sessionKey=1hh0d7FpGHmQvoQJWGYjMZ7M9p6S7FJ3oakHOBVwnFc7K2BvJf
+
+request:
+header: Content-Type: application/json
+
+response:
+return picture with all properties.. 

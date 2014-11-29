@@ -1,0 +1,9 @@
+POST http://gallerysystemservices.apphb.com//api/picture/addCommentToPicture?pictureId=1&sessionKey=1hh0d7FpGHmQvoQJWGYjMZ7M9p6S7FJ3oakHOBVwnFc7K2BvJf
+
+request:
+header: Content-Type: application/json
+
+request body:
+{
+  "Text": "sample string 1"
+}

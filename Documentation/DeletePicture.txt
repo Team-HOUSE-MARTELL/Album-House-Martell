@@ -1,0 +1,3 @@
+DELETE http://gallerysystemservices.apphb.com//api/album/DeletePicture?pictureId=2&sessionKey=1hh0d7FpGHmQvoQJWGYjMZ7M9p6S7FJ3oakHOBVwnFc7K2BvJf
+
+header: Content-Type: application/json
