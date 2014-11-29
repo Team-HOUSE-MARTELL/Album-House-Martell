@@ -1,0 +1,21 @@
+POST http://gallerysystemservices.apphb.com//api/user/register
+
+request:
+headers:
+Content-Type: application/json 
+
+{
+    "UserName": "zntk",
+    "AuthCode": "12345",
+    "Email": "zntk@abv.bg"
+}
+
+response:
+
+CreatedAt=2014-11-29T11:07:04.3508472+00:00
+Email=zntk@abv.bg
+Id=1
+SessionKey=1DWKyEX4Owz9OXcJZ0oEUBQWYtdslQfY1XkiRfn462u9BBbq3U
+UserName=zntk 
+
+самоче в вид на JSon.. просто ако копирам JSon-а от фидлера не е форматиран

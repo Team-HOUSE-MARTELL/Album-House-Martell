@@ -1,0 +1,9 @@
+GET http://gallerysystemservices.apphb.com//api/user/getUser?sessionKey=1hh0d7FpGHmQvoQJWGYjMZ7M9p6S7FJ3oakHOBVwnFc7K2BvJf
+
+request:
+header: Content-Type: application/json
+
+response:
+
+Листва юзъра.. ид-то му, ника му, емаил, дата на регистрация
+и sessionKey

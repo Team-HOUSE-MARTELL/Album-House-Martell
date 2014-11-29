@@ -1,0 +1,4 @@
+PUT http://gallerysystemservices.apphb.com//api/authentication/logout?sessionKey=1sgt7v8S2BfmMwNhuN5D8is24V8bf0EqilYfoARnPrsb1HgVX8
+
+Headers:
+Content-Type: application/json

@@ -1,0 +1,15 @@
+POST http://gallerysystemservices.apphb.com//api/user/addCategoryToUser?sessionKey=1hh0d7FpGHmQvoQJWGYjMZ7M9p6S7FJ3oakHOBVwnFc7K2BvJf
+
+request:
+headers:
+Content-Type: application/json
+
+request body:
+{
+	"Name": "girls"
+}
+
+response:
+
+Id= 1
+Name= girls

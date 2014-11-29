@@ -1,0 +1,19 @@
+POST http://gallerysystemservices.apphb.com//api/authentication/login
+
+request:
+			headers:
+Content-Type: application/json
+
+request body:
+{
+    "UserName": "zntk",
+    "AuthCode": "12345"
+}
+
+response: 
+
+CreatedAt=2014-11-29T11:07:04.3508472+00:00
+Email=zntk@abv.bg
+Id=1
+SessionKey=1sgt7v8S2BfmMwNhuN5D8is24V8bf0EqilYfoARnPrsb1HgVX8
+UserName=zntk 
