@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace GallerySystemServices.Services
 {
@@ -9,6 +10,11 @@ namespace GallerySystemServices.Services
     {
         public static void Register(HttpConfiguration config)
         {
+
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
+
             config.Routes.MapHttpRoute(
                name: "picture",
                routeTemplate: "api/picture/{action}",

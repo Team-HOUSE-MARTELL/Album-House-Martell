@@ -31,9 +31,9 @@ namespace GallerySystemServices.Services.Services
                 throw new InvalidOperationException(USER_EXIST);
             }
 
-            Validator.ValidateEmail(userModel.Email);
-            Validator.ValidateName(userModel.UserName);
-            Validator.ValidatePassword(userModel.AuthCode);
+            //Validator.ValidateEmail(userModel.Email);
+            //Validator.ValidateName(userModel.UserName);
+            //Validator.ValidatePassword(userModel.AuthCode);
 
             user = new User()
             {
