@@ -1,0 +1,8 @@
+GET http://gallerysystemservices.apphb.com//api/album/GetAlbumsByCategory?categoryId=1&sessionKey=1hh0d7FpGHmQvoQJWGYjMZ7M9p6S7FJ3oakHOBVwnFc7K2BvJf
+
+request:
+	headers: Content-Type: application/json
+
+response: 
+
+return all albums with this category id
