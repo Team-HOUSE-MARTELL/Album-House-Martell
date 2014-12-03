@@ -1,7 +1,131 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+}
+
 .required{
     color: #EB6864;
     margin-left: 2px;
 }
 .description{
     padding-left: 13px;
+}
+
+.slider{
+	margin-top: -10px;
+}
+
+.button-next{
+	display: block;
+	position: absolute;
+	right: 1px;
+	bottom: 10px;
+	background-color: transparent;
+	border: none;
+	font-size: 40px;
+	color: brown;
+	outline: none;
+}
+.button-prev{
+	display: block;
+	position: absolute;
+	left: 1px;
+	bottom: 10px;
+	color: brown;
+	background-color: transparent;
+	border: none;
+	font-size: 40px;
+	outline: none;
+}
+
+#image-title{
+	font-family: 'Lobster', cursive;
+	position: absolute;
+	top: 65px;
+	margin-left: 2%;
+	font-size: 30px;
+	color: brown;
+}
+
+#section-rating-albums{
+	font-family: 'Lobster', cursive;
+	font-weight: normal;
+	margin-top: 70px;
+}
+
+.album-container{
+	border: 1px solid lightgray;
+	border-radius: 10px;
+	width: 98%;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.album-image-avatar{
+	max-width: 100%;
+	border-radius: 5px;
+}
+.album-image-container, .album-information-container, .album-voting-container{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.album-image-container{
+	width: 25%;
+}
+
+.album-information-container{
+	margin-left: 10px;
+	width: 60%;
+}
+
+.album-title{
+	font-family: 'Lobster', cursive;
+	font-weight: normal;
+	margin: 0;
+	margin-top: 8px;
+	font-size: 22px;
+	text-decoration: underline;
+}
+
+.comment-buttons{
+	float: right;
+	margin-top: 40px;
+}
+
+.album-voting-container{
+	float: right;
+	position: relative;
+	right: 20px;
+	text-align: center;
+	margin-top: 35px;
+}
+
+.voting-counter, .voting-buttons-container{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.like, .dislike{
+	display: block;
+	font-size: 26px;
+	margin-top: 3px;
+}
+
+.like:active{
+	color: blue;
+	position: relative;
+	top: -1px;
+}
+.dislike:active{
+	color: blue;
+	position: relative;
+	top: 3px;
+}
+
+.voting-counter{
+	font-size: 24px;
+	margin-right: 5px;
 }
