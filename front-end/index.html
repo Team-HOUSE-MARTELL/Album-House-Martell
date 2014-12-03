@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="styles/journal-bootstrap.min.css"/>
     <link rel="stylesheet" href="styles/thumbnail-gallery.css"/>
     <link rel="stylesheet" href="styles/customStyle.css"/>
+    <link rel="stylesheet" href="libs/slick/slick.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <!-- Navigation -->
@@ -83,10 +85,14 @@
 <script src="libs/bootstrap.min.js"></script>
 <!-- Router -->
 <script src="scripts/router.js"></script>
+<!-- Slick -->
+<script src="libs/slick/slick.js"></script>
+
+<script src="scripts/login.js"></script>
 
 <script>
     $(function () {
-        var isLogin = false;
+        var isLogin = true;
         $('#greetings').hide();
 
         if (isLogin) {
@@ -95,7 +101,6 @@
         }
     });
 </script>
-
 
 </body>
 </html>
