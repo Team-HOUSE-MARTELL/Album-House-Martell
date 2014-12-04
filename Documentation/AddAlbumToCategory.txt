@@ -4,7 +4,8 @@ request:
 header: Content-Type: application/json
 
 {
-   "Title": "Audi"
+   "Title": "Audi",
+   "categoryId": "1"
 }
 
 response:
