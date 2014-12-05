@@ -4,15 +4,9 @@
 
 var ajaxRequester = (function () {
     "use strict";
-
-    var PARSE_APP_ID = "VakpEhaG1wVZTKI5dlWfMDFlU2Tfl7abmGUtCuKJ";
-    var PARSE_REST_APP_KEY = "0YRvSq6Qc3tc5Py8Eui4Sn6ePuadvj9BFQgin2R2";
-
+    
     $.ajaxSetup({
-        headers: {
-            "X-Parse-Application-Id": PARSE_APP_ID,
-            "X-Parse-REST-API-Key": PARSE_REST_APP_KEY
-        }
+        contentType: 'application/json'
     });
 
     function makePostRequest(url, data, success, error) {
@@ -30,7 +24,6 @@ var ajaxRequester = (function () {
         $.ajax({
             type: 'PUT',
             url: url,
-            contentType: 'application/json',
             data: JSON.stringify(data),
             success: success,
             error: error
@@ -41,7 +34,6 @@ var ajaxRequester = (function () {
         $.ajax({
             type: 'GET',
             url: url,
-            contentType: 'application/json',
             success: success,
             error: error
         });
@@ -51,7 +43,6 @@ var ajaxRequester = (function () {
         $.ajax({
             type: 'DELETE',
             url: url,
-            contentType: 'application/json',
             data: JSON.stringify(data),
             success: success,
             error: error
