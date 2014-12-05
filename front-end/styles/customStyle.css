@@ -54,7 +54,8 @@
 }
 
 .album-container{
-	border: 1px solid lightgray;
+	border: 2px solid lightgray;
+	box-shadow: 5px 3px 6px gray;
 	border-radius: 10px;
 	width: 98%;
 	margin-left: 10px;
@@ -72,15 +73,6 @@
 	vertical-align: top;
 }
 
-.album-image-container{
-	width: 25%;
-}
-
-.album-information-container{
-	margin-left: 10px;
-	width: 60%;
-}
-
 .album-title{
 	font-family: 'Lobster', cursive;
 	font-weight: normal;
@@ -90,17 +82,16 @@
 	text-decoration: underline;
 }
 
-.comment-buttons{
-	float: right;
-	margin-top: 40px;
+.comment-buttons-container{
+	position: absolute;
+	bottom: 10px;
+	left: 60%;
 }
 
-.album-voting-container{
-	float: right;
-	position: relative;
-	right: 20px;
-	text-align: center;
-	margin-top: 35px;
+.voting-container{
+	right: -45px;
+	position: absolute;
+	top: 25%;
 }
 
 .voting-counter, .voting-buttons-container{
@@ -128,4 +119,24 @@
 .voting-counter{
 	font-size: 24px;
 	margin-right: 5px;
+}
+
+.slider-image{
+	max-width: 100%;
+}
+
+.slick-list{
+	max-height: 500px;
+}
+
+.open-modal{
+	margin-left: 5px;
+}
+#album-name{
+	text-decoration: underline;
+	font-style: italic;
+}
+
+.modal-album-name-container{
+	display: inline-block;
 }
