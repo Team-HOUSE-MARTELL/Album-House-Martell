@@ -1,77 +1,47 @@
 <div dir="" class="slider">
     <div>
-        <img src="https://www.themilliardaire.com/wp-content/uploads/2011/05/bell-ross-harley-davidson-1140x500.jpeg" alt="img"/>
+        <img class="slider-image" src="http://www.pageresource.com/wallpapers/wallpaper/anne-hathaway-face-hd.jpg" alt="img"/>
     </div>
     <div>
-        <img src="http://www.quaintqueerweird.com/wp-content/uploads/2014/01/1397333_576995969045449_713132208_o-v2-1140x500.jpg" alt="img"/>
+        <img class="slider-image"  src="http://www.quaintqueerweird.com/wp-content/uploads/2014/01/1397333_576995969045449_713132208_o-v2-1140x500.jpg" alt="img"/>
     </div>
     <div>
-        <img src="http://www.rstreet.org/wp-content/uploads/2014/08/160485162-1140x500.jpg" alt="img"/>
+        <img class="slider-image"  src="http://www.rstreet.org/wp-content/uploads/2014/08/160485162-1140x500.jpg" alt="img"/>
     </div>
 </div>
 <div id="image-title">Image Title</div>
 <main>
-	<div class="albums-rating">
-		<h1 id="section-rating-albums" class="text-center">Most highly ranked albums</h1>
-		<div class="album-container">
-			<div class="album-image-container">
-				<img class="album-image-avatar" src="https://www.themilliardaire.com/wp-content/uploads/2011/05/bell-ross-harley-davidson-1140x500.jpeg" alt="img">
-			</div>
-			<div class="album-information-container">
-				<h3 class="album-title">The best album ever.</h3>
-				<div class="comment-buttons">
-					<button class="btn btn-primary" type="button">View Comments</button>
-					<button class="btn btn-default" type="button">Comment</button>
-				</div>
-			</div>
-			<div class="album-voting-container">
-				<div class="voting-counter">22</div>
-				<div class="voting-buttons-container">
-					<span class="like glyphicon glyphicon-thumbs-up"></span>
-					<span class="dislike glyphicon glyphicon-thumbs-down"></span>
-				</div>
-			</div>
-		</div>
-		<div class="album-container">
-			<div class="album-image-container">
-				<img class="album-image-avatar" src="http://www.rstreet.org/wp-content/uploads/2014/08/160485162-1140x500.jpg" alt="img">
-			</div>
-			<div class="album-information-container">
-				<h3 class="album-title">The best album ever.</h3>
-				<div class="comment-buttons">
-					<button class="btn btn-primary" type="button">View Comments</button>
-					<button class="btn btn-default" type="button">Comment</button>
-				</div>
-			</div>
-			<div class="album-voting-container">
-				<div class="voting-counter">22</div>
-				<div class="voting-buttons-container">
-					<span class="like glyphicon glyphicon-thumbs-up"></span>
-					<span class="dislike glyphicon glyphicon-thumbs-down"></span>
-				</div>
-			</div>
-		</div>
-		<div class="album-container">
-			<div class="album-image-container">
-				<img class="album-image-avatar" src="http://www.quaintqueerweird.com/wp-content/uploads/2014/01/1397333_576995969045449_713132208_o-v2-1140x500.jpg" alt="img">
-			</div>
-			<div class="album-information-container">
-				<h3 class="album-title">The best album ever.</h3>
-				<div class="comment-buttons">
-					<button class="btn btn-primary" type="button">View Comments</button>
-					<button class="btn btn-default" type="button">Comment</button>
-				</div>
-			</div>
-			<div class="album-voting-container">
-				<div class="voting-counter">22</div>
-				<div class="voting-buttons-container">
-					<span class="like glyphicon glyphicon-thumbs-up"></span>
-					<span class="dislike glyphicon glyphicon-thumbs-down"></span>
-				</div>
-			</div>
-		</div>
+	<h1 id="section-rating-albums" class="text-center">Most highly ranked albums</h1>
+	<div class="col-md-12 albums-container">
 	</div>
 </main>
 
+<div class="modal fade" id="add-comment-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal">
+		    	<span aria-hidden="true">&times;</span>
+		    	<span class="sr-only">Close</span>
+	    	</button>
+		    <h4 class="modal-title" id="exampleModalLabel">
+		    	Add Comment - <span id="album-name"></span>
+		    </h4>
+		  </div>
+		  <div class="modal-body">
+		    <form role="form">
+		      <div class="form-group">
+		        <label for="message-text" class="control-label">Message:</label>
+		        <textarea class="form-control" id="comment-text"></textarea>
+		      </div>
+		    </form>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    <button id="add-comment-button" type="button" class="btn btn-primary">Add</button>
+		  </div>
+		</div>
+	</div>
+</div>
 
 <script src="scripts/homePage.js"></script>
