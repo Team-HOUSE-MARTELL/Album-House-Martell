@@ -1,0 +1,3 @@
+GET http://gallerysystemservices.apphb.com//api/album/GetAllAlbums
+
+return all albums for all user
