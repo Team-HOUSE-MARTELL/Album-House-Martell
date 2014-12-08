@@ -29,7 +29,10 @@
                     $('#page-content').load('views/about.html');
                     break;
                 case '#albums':
-                    $('#page-content').load('views/gallery.html');
+                $('#page-content').load('views/gallery.html');
+                break;
+                case '#categories':
+                    $('#page-content').load('views/categories.html');
                     break;
 
                 default :

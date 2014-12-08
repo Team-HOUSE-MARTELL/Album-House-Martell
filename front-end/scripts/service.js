@@ -13,12 +13,36 @@ var service = (function() {
 		}
 	}
 
+    function getAllCategories (success, error){
+        var storageData = getStorageData();
+        var tempUrl = BASE_URL + '//user/getUserCategories?sessionKey=' + storageData.sessionKey;
+        ajaxRequester.get(tempUrl, success, error);
+    }
+
+    function addCategory (data, success, error){
+        var storageData = getStorageData();
+        var tempUrl = BASE_URL + '//user/addCategoryToUser?sessionKey=' + storageData.sessionKey;
+        ajaxRequester.post(tempUrl, data, success, error);
+    }
+
 	function getAllAlbums(success, error) {
 		var tempUrl = BASE_URL + '/album/GetAllAlbums';
 		ajaxRequester.get(tempUrl, success, error);
 	}
 
-	function voteAlbum(albumId, data, success, error) {
+    function getUserAlbums (success, error){
+        var storageData = getStorageData();
+        var tempUrl = BASE_URL + '//album/GetAlbums?sessionKey=' + storageData.sessionKey;
+        ajaxRequester.get(tempUrl, success, error);
+    }
+
+    function getAlbumsByCategory (success, error){
+        var storageData = getStorageData();
+        var tempUrl = BASE_URL + '//album/GetAlbumsByCategory?categoryId=1&sessionKey=' + storageData.sessionKey;
+        ajaxRequester.get(tempUrl, success, error);
+    }
+
+    function voteAlbum(albumId, data, success, error) {
 		var storageData = getStorageData();
 		var tempUrl = BASE_URL + '/album/vote?albumId=' + albumId + '&sessionKey=' + storageData.sessionKey;
 		ajaxRequester.post(tempUrl, data, success, error);
@@ -55,7 +79,11 @@ var service = (function() {
 
 	return {
 		getAllAlbums: getAllAlbums,
-		voteAlbum: voteAlbum,
+        getUserAlbums: getUserAlbums,
+        getAlbumsByCategory : getAlbumsByCategory,
+        getAllCategories: getAllCategories,
+        addCategory: addCategory,
+        voteAlbum: voteAlbum,
 		addCommentToAlbum: addCommentToAlbum,
 		getSliderImages: getSliderImages,
 		registerUser: registerUser,

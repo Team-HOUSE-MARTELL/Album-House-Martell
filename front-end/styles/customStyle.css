@@ -160,6 +160,23 @@
 	text-align: center !important;
 }
 
+#categories-container li {
+    font-family: 'Lobster',cursive;
+    font-weight: normal;
+    margin: 8px 0 0 0;
+    font-size: 22px;
+    text-decoration: underline
+}
+
+#categories-container h1 {
+    font-family: 'Lobster', cursive;
+    font-weight: normal;
+    margin: 0;
+}
+
+#categories-list {
+    margin-top: 25px;
+}
 
 @media all and (max-width: 767px){
 	.login-singup-menu{
