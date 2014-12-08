@@ -1,3 +1,4 @@
-GET http://gallerysystemservices.apphb.com//api/album/GetAllAlbums
+GET http://gallerysystemservices.apphb.com//api/album/GetAllAlbums?albumCount={albumCount}
 
-return all albums for all user
+Ako ne podadete ?albumCount=... togava defaultniq broi na listnatite
+albumi shte byde 10

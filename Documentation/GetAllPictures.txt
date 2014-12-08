@@ -1,1 +1,4 @@
-GET http://gallerysystemservices.apphb.com//api/picture/GetAllPictures
+GET http://gallerysystemservices.apphb.com//api/picture/GetAllPictures?pictureCount={pictureCount}
+
+Ako ne podadete ?pictureCount=... togava defaultniq broi na listnatite
+snimki shte byde 20
