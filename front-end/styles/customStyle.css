@@ -38,11 +38,11 @@
 	outline: none;
 }
 
-#image-title{
+.image-title{
 	font-family: 'Lobster', cursive;
 	position: absolute;
-	top: 65px;
-	margin-left: 2%;
+	top: 20px;
+	margin-left: 0.5%;
 	font-size: 30px;
 	color: brown;
 }
@@ -57,9 +57,6 @@
 	border: 2px solid lightgray;
 	box-shadow: 5px 3px 6px gray;
 	border-radius: 10px;
-	width: 98%;
-	margin-left: 10px;
-	margin-right: 10px;
 	margin-top: 20px;
 	padding: 10px;
 }
@@ -123,6 +120,7 @@
 
 .slider-image{
 	max-width: 100%;
+	min-width: 100%;
 }
 
 .slick-list{
@@ -132,11 +130,42 @@
 .open-modal{
 	margin-left: 5px;
 }
-#album-name{
+.album-name{
 	text-decoration: underline;
 	font-style: italic;
 }
 
 .modal-album-name-container{
 	display: inline-block;
+}
+
+#ohsnap{
+	margin: 0;
+}
+
+.login-singup-menu{
+	float: right;
+}
+
+.greetings-container{
+	float: right;
+	display: none;
+}
+
+#logout-button{
+	font-weight: bold;
+}
+
+.text-center{
+	text-align: center !important;
+}
+
+
+@media all and (max-width: 767px){
+	.login-singup-menu{
+		float: none !important;
+	}
+	.greetings-container{
+		float: none !important;
+	}
 }
