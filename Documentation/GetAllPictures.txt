@@ -1,0 +1,1 @@
+GET http://gallerysystemservices.apphb.com//api/picture/GetAllPictures
