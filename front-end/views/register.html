@@ -1,40 +1,47 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="well bs-component">
-        <form class="form-horizontal">
+        <form method="post" id="registration-form" class="form-horizontal">
             <fieldset>
                 <legend>Sing up</legend>
-                <div class="form-group">
+                <div class="form-group control-group">
                     <label for="inputUserName" class="col-lg-2 control-label">Username<span class="required">*</span></label>
-                    <div class="col-lg-10">
-                        <input class="form-control" id="inputUserName" required="" placeholder="User name" type="text">
+                    <div class="col-lg-10 controls">
+                        <input class="form-control" id="inputUserName" required name="username"
+                        placeholder="User name" type="text">
+                        <p class="help-block"></p>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group control-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email<span class="required">*</span></label>
-                    <div class="col-lg-10">
-                        <input class="form-control" id="inputEmail" required="" placeholder="Email" type="email">
+                    <div class="col-lg-10 controls">
+                        <input class="form-control" id="inputEmail" required placeholder="Email" type="email">
+                        <p class="help-block"></p>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group control-group">
                     <label for="inputPassword" class="col-lg-2 control-label">Password<span class="required">*</span></label>
-                    <div class="col-lg-10">
-                        <input class="form-control" id="inputPassword" required="" placeholder="Password" type="password">
+                    <div class="col-lg-10 controls">
+                        <input class="form-control" id="inputPassword" required placeholder="Password" name="password" type="password">
+                        <p class="help-block"></p>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="description" class="col-lg-2 control-label description">Description</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="description"></textarea>
-                        <span class="help-block">Describe yourself with 2 - 3 sentences.</span>
+                <div class="form-group control-group">
+                    <label for="inputRepeatPassword" class="col-lg-2 control-label text-center">Repeat Password<span class="required">*</span></label>
+                    <div class="col-lg-10 controls">
+                        <input class="form-control" 
+                        id="inputRepeatPassword" required
+                        placeholder="Repeat Password" type="password">
+                        <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <button type="reset" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+                        <span id="register-button" class="btn btn-primary">Register</span>
                     </div>
                 </div>
             </fieldset>
         </form>
     </div>
 </div>
+<script type="text/javascript" src="scripts/register.js"></script>
