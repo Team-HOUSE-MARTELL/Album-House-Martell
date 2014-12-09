@@ -7,7 +7,7 @@
             <button id="add-category-button" type="button" data-toggle="modal" data-target="#add-category-modal" data-whatever="@twbootstrap" class="btn btn-primary">Add Category</button>
         </div>
     </aside>
-    <h1 id="section-rating-albums" class="col-md-offset-3 text-center">All albums</h1>
+    <h1 id="section-albums" class="col-md-offset-3 text-center">All albums</h1>
     <div class="col-md-offset-3 albums-container">
     </div>
 </main>
@@ -23,10 +23,10 @@
                 <h4 class="modal-title" id="modalLabel">Add New Category</h4>
             </div>
             <div class="modal-body">
-                <form role="form">
+                <form id="category-form" role="form">
                     <div class="form-group">
                         <label for="category-name" class="control-label">Category Name:</label>
-                        <textarea class="form-control" id="category-name"></textarea>
+                        <input class="form-control" id="category-name">
                     </div>
                 </form>
             </div>
@@ -51,7 +51,7 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <form role="form">
+                <form id="comment-form" role="form">
                     <div class="form-group">
                         <label for="comment-text" class="control-label">Message:</label>
                         <textarea class="form-control" id="comment-text"></textarea>

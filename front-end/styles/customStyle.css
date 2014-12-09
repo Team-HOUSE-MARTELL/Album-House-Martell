@@ -47,7 +47,7 @@
 	color: brown;
 }
 
-#section-rating-albums{
+#section-rating-albums, #section-albums{
 	font-family: 'Lobster', cursive;
 	font-weight: normal;
 	margin-top: 70px;

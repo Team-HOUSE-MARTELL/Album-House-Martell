@@ -36,9 +36,9 @@ var service = (function() {
         ajaxRequester.get(tempUrl, success, error);
     }
 
-    function getAlbumsByCategory (success, error){
+    function getAlbumsByCategory (categoryId, success, error){
         var storageData = getStorageData();
-        var tempUrl = BASE_URL + '//album/GetAlbumsByCategory?categoryId=1&sessionKey=' + storageData.sessionKey;
+        var tempUrl = BASE_URL + '//album/GetAlbumsByCategory?categoryId=' + categoryId + '&sessionKey=' + storageData.sessionKey;
         ajaxRequester.get(tempUrl, success, error);
     }
 

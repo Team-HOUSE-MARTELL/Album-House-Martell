@@ -3,7 +3,7 @@
 
     $(function() {
         var DEFAULT_IMAGE_FOR_ALBUM = 'http://placehold.it/500x300&text=No%20image';
-        var categoryContainerTemplate = '<li><a class="categoryLink" href="#categories">{{category-name}}</a></li>';
+        var categoryContainerTemplate = '<li><a class="categoryLink" >{{category-name}}</a></li>';
         var albumContainerTemplate =
             '<div id="categories" class="col-lg-3"></div>' +
             '<div class="row col-md-12 album-container">' +
@@ -31,16 +31,16 @@
         }
 
         function drawCategories(data) {
+            $('#categories-list ul').children().remove();
             $(data).each(function(_, category) {
                 var $currCategory = $(categoryContainerTemplate
                         .replace('{{category-name}}', category.Name)
                 );
 
                 $currCategory.data('categoryInformation', category);
-//                $currCategory.find('categoryLink').click(showCategoryAlbums);
-                $currCategory.find('#add-category-button').on('click', addCategoryButtonClicked);
-//                $currCategory
-                $('#categories-list  ul').append($currCategory);
+                $currCategory.find('.categoryLink').attr('data-id', category.Id);
+                $currCategory.find('.categoryLink').click(getCategoryAlbums);
+                $('#categories-list ul').append($currCategory);
             }).after(
                 getAlbums()
             );
@@ -51,6 +51,7 @@
         }
 
         function drawAlbums(data) {
+            $('#section-albums').text('All Albums');
             $('.albums-container').children().remove();
             $(data).each(function(_, album) {
                 var albumMainImage = album.MainImageUrl || DEFAULT_IMAGE_FOR_ALBUM;
@@ -61,7 +62,6 @@
                         .replace('{{album-title}}', album.Title)
                         .replace('{{album-vote-count}}', albumVotes)
                 );
-
 
                 $currAlbum.data('albumInformation', album);
                 $currAlbum.find('#like-button').on('click', albumVoteUpButtonClicked);
@@ -123,7 +123,6 @@
                 var $noResults = $('<li class="list-group-item list-group-item-danger">').append($('<h2 class="text-center">').text('No results.'));
                 $('#comments-container').append($noResults);
             }
-
         }
 
         function addCommentClicked() {
@@ -141,22 +140,53 @@
             }
         }
 
-//        function showCategoryAlbums (){
-//            var currentCategory = $(this).parent().parent().parent().data('categoryInformation');
-//            console.log(currentCategory);
-//        }
-//
-        function addCategoryButtonClicked () {
-            var categoryName = $('#add-category-modal #category-name').val();
-            var data = {
-                "Name": categoryName
-            };
-            $('#add-category-modal #save-category-button').off().on('click', alert('Yes'));
-            service.addCategory(data, success, error)
+        function getCategoryAlbums (){
+            var categoryId = $(this).attr('data-id');
+            $('#section-albums').text($(this).text());
+            service.getAlbumsByCategory(
+                categoryId,
+                (function (data){
+                    $('.albums-container').children().remove();
+                    $(data).each(function(_, album) {
+                        var albumMainImage = album.MainImageUrl || DEFAULT_IMAGE_FOR_ALBUM;
+                        var albumVotes = parseInt(album.PositiveVotes) - parseInt(album.NegativeVotes);
 
+                        var $currAlbum = $(albumContainerTemplate
+                                .replace('{{album-image-url}}', albumMainImage)
+                                .replace('{{album-title}}', album.Title)
+                                .replace('{{album-vote-count}}', albumVotes)
+                        );
+
+                        $currAlbum.data('albumInformation', album);
+                        $currAlbum.find('#like-button').on('click', albumVoteUpButtonClicked);
+                        $currAlbum.find('#dislike-button').on('click', albumVoteDownButtonClicked);
+                        $currAlbum.find('.open-modal').on('click', configCommentModal);
+                        $currAlbum.find('.view-comments').on('click', showComments);
+
+                        $('.albums-container').append($currAlbum);
+                    });
+                }),
+                error);
+        }
+
+        function saveCategoryClicked () {
+            $('#save-category-button').on('click', function () {
+                var categoryName = $('#category-name').val();
+                if (categoryName) {
+                    var data = {
+                        "Name": categoryName
+                    };
+                    service.addCategory(data, [getCategoriesAndAlbums(), success('Category was added successfully.')], error);
+                    $('#category-form').trigger('reset');
+                    $('#add-category-modal').modal('hide');
+                } else {
+                    ohSnap('Category cannot be empty.', 'orange');
+                }
+            });
         }
 
         getCategoriesAndAlbums();
+        saveCategoryClicked();
     });
 
 }());
