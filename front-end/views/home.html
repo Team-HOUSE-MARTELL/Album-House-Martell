@@ -1,0 +1,62 @@
+<div dir="" class="slider">
+</div>
+<main>
+	<h1 id="section-rating-albums" class="text-center">Most highly ranked albums</h1>
+	<div class="col-md-12 albums-container">
+	</div>
+</main>
+
+<div class="modal fade" id="add-comment-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal">
+		    	<span aria-hidden="true">&times;</span>
+		    	<span class="sr-only">Close</span>
+	    	</button>
+		    <h4 class="modal-title" id="exampleModalLabel">
+		    	Add Comment - <span class="album-name" id="album-name"></span>
+		    </h4>
+		  </div>
+		  <div class="modal-body">
+		    <form id="comment-form" role="form">
+		      <div class="form-group">
+		        <label for="message-text" class="control-label">Message:</label>
+		        <textarea class="form-control" id="comment-text"></textarea>
+		      </div>
+		    </form>
+		  </div>
+		  <div class="modal-footer">
+		    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		    <button id="add-comment-button" type="button" class="btn btn-primary">Add</button>
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="comments-modal-container" tabindex="-1" role="dialog" aria-labelledby="commentsView" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal">
+			    	<span aria-hidden="true">&times;</span>
+			    	<span class="sr-only">Close</span>
+		    	</button>
+			    <h4 class="modal-title" id="commentsView">
+		    		Comments - <span class="album-name" id="comments-album-name"></span>
+			    </h4>
+		    </div>
+		    <div class="modal-body">
+		    	<div>
+			    	<ul id="comments-container" class="list-group">
+						
+					</ul>
+				</div>
+		    </div>
+		    <div class="modal-footer">
+			    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	</div>
+</div>
+
+<script src="scripts/homePage.js"></script>
