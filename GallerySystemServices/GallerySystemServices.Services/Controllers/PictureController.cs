@@ -34,7 +34,15 @@ namespace GallerySystemServices.Services.Controllers
 
                 var newComment = pictureService.AddPictureComment(comment, picture, user);
 
-                return this.Request.CreateResponse(HttpStatusCode.Created);
+                var commentToReturn = new CommentModel()
+                {
+                    CreatedAt = newComment.CreatedAt,
+                    Id = newComment.Id,
+                    Text = newComment.Text,
+                    UserName = user.UserName
+                };
+
+                return this.Request.CreateResponse(HttpStatusCode.Created, commentToReturn);
             }
             catch (Exception ex)
             {
@@ -71,7 +79,24 @@ namespace GallerySystemServices.Services.Controllers
 
                 var newVote = pictureService.AddVoteToPicture(vote, picture, user);
 
-                return this.Request.CreateResponse(HttpStatusCode.OK);
+                var pictureToReturn = new PictureModel()
+                {
+                    Comments = from comment in picture.Comments
+                               select new CommentModel()
+                               {
+                                   Text = comment.Text,
+                                   UserName = comment.User.UserName,
+                                   CreatedAt = comment.CreatedAt
+                               },
+                    CreateDate = picture.CreateDate,
+                    Id = picture.Id,
+                    Url = picture.Url,
+                    Title = picture.Title,
+                    PositiveVotes = picture.Votes.Count(v => v.isPositive == true),
+                    NegativeVotes = picture.Votes.Count(v => v.isPositive == false)
+                };
+
+                return this.Request.CreateResponse(HttpStatusCode.OK, pictureToReturn);
             }
             catch (Exception ex)
             {
@@ -128,6 +153,40 @@ namespace GallerySystemServices.Services.Controllers
             }
         }
 
+        [HttpGet]
+        [ActionName("GetAllPictures")]
+        public HttpResponseMessage GetAllPictures(int pictureCount = 20)
+        {
+            try
+            {
+                var pictureService = new PictureService();
+                var allPictures = pictureService.GetAllPictures(pictureCount).ToList();
+                var pictures = from picture in allPictures
+                             select new PictureModel()
+                {
+                    Comments = from comment in picture.Comments
+                               select new CommentModel()
+                               {
+                                   Text = comment.Text,
+                                   UserName = comment.User.UserName,
+                                   CreatedAt = comment.CreatedAt
+                               },
+                    CreateDate = picture.CreateDate,
+                    Id = picture.Id,
+                    Url = picture.Url,
+                    Title = picture.Title,
+                    PositiveVotes = picture.Votes.Count(v => v.isPositive == true),
+                    NegativeVotes = picture.Votes.Count(v => v.isPositive == false)
+                };
+
+                return this.Request.CreateResponse(HttpStatusCode.OK, pictures);
+
+            }
+            catch (Exception ex)
+            {
+                return this.Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
 
     }
 }

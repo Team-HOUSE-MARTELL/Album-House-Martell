@@ -113,5 +113,10 @@ namespace GallerySystemServices.Services.Managers
             dbContext.Pictures.Remove(picture);
             dbContext.SaveChanges();
         }
+
+        public IEnumerable<Album> GetAllAlbums(int albumCount)
+        {
+            return dbContext.Albums.OrderByDescending(album => album.Votes.Count(v => v.isPositive == true) - album.Votes.Count(v => v.isPositive == false)).Take(albumCount);
+        }
     }
 }
